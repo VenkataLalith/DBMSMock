@@ -4,7 +4,7 @@ package org.dbms;
  * Hello world!
  *
  */
-public class App 
+public class MockDMBS
 {
     public static void main( String[] args )
     {
