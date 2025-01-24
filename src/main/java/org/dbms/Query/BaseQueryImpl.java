@@ -4,6 +4,11 @@ public abstract class BaseQueryImpl implements  QueryParser, QueryProcessor{
 
     private String tableName;
     private Map<String,String> columnData;
+    String queryString;
+
+    BaseQueryImpl(String queryString){
+        this.queryString = queryString;
+    }
 
     public String getTableName() {
         return tableName;
@@ -23,5 +28,13 @@ public abstract class BaseQueryImpl implements  QueryParser, QueryProcessor{
 
     public  String getTableName(String query){
         return this.tableName;
+    }
+
+    public String getQueryString() {
+        return queryString;
+    }
+
+    public void setQueryString(String queryString) {
+        this.queryString = queryString;
     }
 }

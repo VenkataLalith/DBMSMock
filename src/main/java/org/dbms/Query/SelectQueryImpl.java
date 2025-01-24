@@ -4,21 +4,18 @@ import java.util.Map;
 
 public class SelectQueryImpl extends BaseQueryImpl{
 
-    /**
-     * @param query
-     * @return
-     */
+    SelectQueryImpl(String queryString){
+        super(queryString);
+    }
+
     @Override
-    public boolean isQueryValid(String query) {
+    public boolean isQueryValid() {
         return false;
     }
 
-    /**
-     * @param query
-     * @return
-     */
+
     @Override
-    public Map<String, Map<String, String>> processQuery(String query) {
+    public Map<String, Map<String, String>> processQuery() {
         return null;
     }
 }
