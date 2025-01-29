@@ -15,7 +15,7 @@ public class SelectQueryImpl extends BaseQueryImpl{
     private String whereClause;
     private Map<String, Map<String,String>> tableData;
 
-    SelectQueryImpl(String queryString){
+    public SelectQueryImpl(String queryString){
         super(queryString);
         selectRegex = "^SELECT\\s+" +  // SELECT keyword
                 "([*]|[\\w\\s,]+)\\s*" +  // Column names or *
@@ -53,8 +53,10 @@ public class SelectQueryImpl extends BaseQueryImpl{
         String[] columnNames = columns.equals("*") ? new String[]{"*"}: matcher.group(1).split("\\s*,\\s*");
         Map<String,String> columnData = new HashMap<>();
         for(String columnName : columnNames){
-            columnData.put(columnName, null);
+            columnData.put(columnName.trim(), null);
         }
+        if(this.tableData == null)
+            this.tableData = new HashMap<>();
         this.tableData.put(this.tableName,columnData);
         return this.tableData;
     }

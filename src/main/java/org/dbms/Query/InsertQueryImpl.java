@@ -15,7 +15,7 @@ public class InsertQueryImpl extends BaseQueryImpl{
     private  Map<String, Map<String,String>> result;
     private Map<String,String> columnValuesMap;
     private boolean isValidatedFlag;
-    InsertQueryImpl(String queryString){
+   public InsertQueryImpl(String queryString){
         super(queryString);
         this.insertRegex = "^INSERT\\s+INTO\\s+" +  // INSERT INTO
                 "([A-Za-z_][A-Za-z0-9_]*)\\s*" +  // Table name (valid identifier)
